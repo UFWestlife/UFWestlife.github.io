@@ -81,14 +81,14 @@
 
 <meta name="description" content="大佬总结链接)核心模板123456789101112131415161718192021public List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; subsetsWithDup(int[] nums) &amp;#123;    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; res = new ArrayList&amp;lt;&amp;gt;();    if (nums.lengt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FirstTest">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/FirstTest/index.html">
+<meta property="og:title" content="subSet Problems">
+<meta property="og:url" content="http://yoursite.com/2018/09/30/subSet Problems/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="大佬总结链接)核心模板123456789101112131415161718192021public List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; subsetsWithDup(int[] nums) &amp;#123;    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; res = new ArrayList&amp;lt;&amp;gt;();    if (nums.lengt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-01T04:52:05.667Z">
+<meta property="og:updated_time" content="2018-10-01T18:51:37.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FirstTest">
+<meta name="twitter:title" content="subSet Problems">
 <meta name="twitter:description" content="大佬总结链接)核心模板123456789101112131415161718192021public List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; subsetsWithDup(int[] nums) &amp;#123;    List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; res = new ArrayList&amp;lt;&amp;gt;();    if (nums.lengt">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/30/FirstTest/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/30/subSet Problems/"/>
 
 
 
 
 
-  <title>FirstTest | Hexo</title>
+  <title>subSet Problems | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/FirstTest/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/subSet Problems/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">FirstTest</h1>
+          <h1 class="post-title" itemprop="name headline">subSet Problems</h1>
         
 
         <div class="post-meta">
@@ -300,6 +300,7 @@
 
       
         <p><a href="https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning" target="_blank" rel="noopener">大佬总结链接</a>)<br><strong>核心模板</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (nums.length == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">    Arrays.sort(nums);<span class="comment">//排序很关键</span></span><br><span class="line">    helper(res, <span class="keyword">new</span> ArrayList&lt;&gt;(), nums, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//有些需要start，有些不需要</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; temp, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> start)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (满足条件)&#123;</span><br><span class="line">        res.add(<span class="keyword">new</span> ArrayList&lt;&gt;(temp));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;<span class="comment">//构建循环</span></span><br><span class="line">        <span class="comment">//1. 是否去重</span></span><br><span class="line">        <span class="comment">//2. temp添加元素</span></span><br><span class="line">        <span class="comment">//3. 递归调用，param变化</span></span><br><span class="line">        <span class="comment">//4. temp去掉末尾元素</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h4 id="Subsets-Problem"><a href="#Subsets-Problem" class="headerlink" title="Subsets Problem"></a>Subsets Problem</h4><p>==本题求子集，元素数量会变化，所以没有判断条件直接res.add()==<br><a href="https://leetcode.com/problems/subsets/" target="_blank" rel="noopener">LeetCode 78. Subsets</a>  </p>
 <ul>
 <li>循环start递增<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list , List&lt;Integer&gt; tempList, <span class="keyword">int</span> [] nums, <span class="keyword">int</span> start)</span></span>&#123;</span><br><span class="line">    list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;</span><br><span class="line">        tempList.add(nums[i]);</span><br><span class="line">        backtrack(list, tempList, nums, i + <span class="number">1</span>);</span><br><span class="line">        tempList.remove(tempList.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
