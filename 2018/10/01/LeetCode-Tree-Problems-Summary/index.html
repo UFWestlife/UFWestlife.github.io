@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="english">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="tree," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Preorder100. Same Tree  可套用模板，双pre  123456789101112public  boolean  isSameTree(TreeNode p, TreeNode q) &amp;#123;if(p == null &amp;amp;&amp;amp; q == null) return  true;if(p == null || q == null) return  false;if">
+<meta name="keywords" content="tree">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode Tree Problems Summary">
+<meta property="og:url" content="http://yoursite.com/2018/10/01/LeetCode-Tree-Problems-Summary/index.html">
+<meta property="og:site_name" content="Zun Wang personal blog">
+<meta property="og:description" content="Preorder100. Same Tree  可套用模板，双pre  123456789101112public  boolean  isSameTree(TreeNode p, TreeNode q) &amp;#123;if(p == null &amp;amp;&amp;amp; q == null) return  true;if(p == null || q == null) return  false;if">
+<meta property="og:locale" content="english">
+<meta property="og:image" content="http://yoursite.com/imgs/250.jpg">
+<meta property="og:image" content="http://yoursite.com/imgs/366.jpg">
+<meta property="og:updated_time" content="2018-10-02T01:36:28.492Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode Tree Problems Summary">
+<meta name="twitter:description" content="Preorder100. Same Tree  可套用模板，双pre  123456789101112public  boolean  isSameTree(TreeNode p, TreeNode q) &amp;#123;if(p == null &amp;amp;&amp;amp; q == null) return  true;if(p == null || q == null) return  false;if">
+<meta name="twitter:image" content="http://yoursite.com/imgs/250.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/01/LeetCode-Tree-Problems-Summary/"/>
+
+
+
+
+
+  <title>LeetCode Tree Problems Summary | Zun Wang personal blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="english">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zun Wang personal blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/LeetCode-Tree-Problems-Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zun Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zun Wang personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LeetCode Tree Problems Summary</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T18:23:28-07:00">
+                2018-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Preorder"><a href="#Preorder" class="headerlink" title="Preorder"></a>Preorder</h2><p><em><strong>100. Same Tree</strong></em></p>
+<ul>
+<li>可套用模板，双pre</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span>  <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(p == <span class="keyword">null</span> &amp;&amp; q == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(p == <span class="keyword">null</span> || q == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(p.val != q.val) <span class="keyword">return</span>  <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><em><strong>101. Symmetric Tree Preorder</strong></em></p>
+<ul>
+<li><p>SameTree拓展</p>
+</li>
+<li><p>判断root的两个子树是不是sameTree</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span>  <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  isSameTree(root.left, root.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>572. SubTree of Another Tree</strong></em></p>
+<ul>
+<li><p>SameTree拓展</p>
+</li>
+<li><p>先判断是不是sameTree，然后递归调用一半左一半右</p>
+</li>
+</ul>
+<p><em><strong>257. Binary Tree Paths</strong></em></p>
+<ul>
+<li>DFS preOrder模板，判断null返回，判断叶子加上val，每递归一层加上-&gt;+val</li>
+</ul>
+<p><em><strong>112. Path Sum + 113. Path Sum II + ==437. Path Sum III==</strong></em></p>
+<ul>
+<li><p>PathSum: 双pre，判断叶子，return用or连接左右递归</p>
+</li>
+<li><p>PathSumII: 顺序preOrder，==两个递归完成后进行==<code>list.remove(list.size()-1)</code></p>
+</li>
+<li><p>++PathSumIII: <a href="https://leetcode.com/problems/path-sum-iii/discuss/91884/Simple-AC-Java-Solution-DFS" target="_blank" rel="noopener">Solution</a> 顺序Pre加上prefixSum的HashMap++</p>
+</li>
+</ul>
+<p><em><strong>129. Sum Root to Leaf Numbers</strong></em></p>
+<ul>
+<li>双pre，左递归+右递归，每一层的值是<code>10 * x + root.val</code>，遇叶子返回</li>
+</ul>
+<p><em><strong>298. Binary Tree Longest Consecutive Sequence</strong></em></p>
+<ul>
+<li><p>顺序Pre，传参sum，每到一个节点判断val是否连上，连上的话sum++，连不上的话sum=1（重置sum）</p>
+</li>
+<li><p>判断sum之后要进行maxRes操作，取当前最大值作为res (res是全局变量)</p>
+</li>
+</ul>
+<p><em><strong>111. Minimum of Binary Tree</strong></em></p>
+<ul>
+<li>顺序pre，叶子节点更新minRes，参照最大深度的双pre，两种方法都能做</li>
+</ul>
+<p><em><strong>654. Maximum Binary Tree</strong></em></p>
+<ul>
+<li><p>DFS，顺序pre，传参start, end，找start，end中的最大值建root，然后顺序递归，左start，max-1，右max+1，end</p>
+</li>
+<li><p>BFS, <a href="https://leetcode.com/problems/maximum-binary-tree/discuss/106156/Java-worst-case-O(N" target="_blank" rel="noopener">Solution Code</a>-solution)，要用Deque做</p>
+</li>
+</ul>
+<h2 id="Postorder"><a href="#Postorder" class="headerlink" title="Postorder"></a>Postorder</h2><p><em><strong>226. Invert Binary Tree (Postorder+BFS)</strong></em></p>
+<ul>
+<li><p>BFS，level order traversal，用queue</p>
+</li>
+<li><p>DFS, 顺序postOrder，实例化递归返回leftNode和rightNode，中点位置进行对调操作，返回root</p>
+</li>
+</ul>
+<p><em><strong>104. Maximum Depth of Binary Tree</strong></em></p>
+<ul>
+<li><p>DFS, 可以参照111. MinimumDepthOfBT来顺序递归，叶子更新maxRes</p>
+</li>
+<li><p>也可以双post？ 不传参的话==return Math.max(helper(root.left), helper(root.right))+1==，传参level的话每次调用level+1,返回左右最大值</p>
+</li>
+</ul>
+<p><em><strong>110. Balanced Binary Tree</strong></em></p>
+<ul>
+<li>DFS, 基于MaximumDepth，顺序post，在helper函数中实例left和right的maxDepth，然后root处进行判断，返回的是 ==Math.max(l, r)+1==</li>
+</ul>
+<p><em><strong>116. Populating Next Right Pointers in Each Node</strong></em></p>
+<ul>
+<li><p>BFS, LevelOrder</p>
+</li>
+<li><p>DFS, preOrder，中节点处操作左右next, <code>root.right.next = root.next.left</code></p>
+</li>
+</ul>
+<p><em><strong>236. Lowest Common Ancestor of Binary Tree</strong></em></p>
+<ul>
+<li>DFS, 顺序postOrder，终结条件：判断为空或者p q时return root， 实例化左右递归，操作中节点时，进行三重判断</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  TreeNode  <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(root == <span class="keyword">null</span> || root == p || root == q)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> root;</span><br><span class="line"></span><br><span class="line">TreeNode  left = lowestCommonAncestor(root.left, p, q);</span><br><span class="line"></span><br><span class="line">TreeNode  right = lowestCommonAncestor(root.right, p, q);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (left != <span class="keyword">null</span> &amp;&amp; right != <span class="keyword">null</span>) <span class="keyword">return</span> root;</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>  <span class="keyword">if</span> (left == <span class="keyword">null</span>) <span class="keyword">return</span> right;</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>  <span class="keyword">return</span> left;</span><br><span class="line"></span><br><span class="line"><span class="comment">//return left != null &amp;&amp; right != null ? root : (left != null ? left : right);</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>124. Binary Tree Maximum Path Sum</strong></em></p>
+<ul>
+<li><p>DFS，顺序postOrder，在中节点处维护一个maxRes</p>
+</li>
+<li><p>helper函数记录在每个中节点处的1. maxRes 2.返回该节点左右子树的累计最大值加上自己的val</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">int</span>  <span class="title">helper</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] res)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  left = Math.max(<span class="number">0</span>, helper(root.left, res));</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  right = Math.max(<span class="number">0</span>, helper(root.right, res));</span><br><span class="line"></span><br><span class="line">res[<span class="number">0</span>] = Math.max(res[<span class="number">0</span>], left+right+root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  Math.max(left, right)+root.val;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>250. Count Univalue Subtrees</strong></em></p>
+<ul>
+<li><p>题意是求多少个相同val的子树，所以要看每个根节点，两种情况1. 左右都null 2. 左右和根节点val相同</p>
+</li>
+<li><p>DFS，顺序postOrder，return boolean，传参根节点val，实例化递归左右子树</p>
+</li>
+<li><p>在根节点判断左右Boolean值，返回并判断根节点val和父亲val是否相等</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">boolean</span>  <span class="title">count</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] counter, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">boolean</span>  l = count(root.left, counter, root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">boolean</span>  r = count(root.right, counter, root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (l &amp;&amp; r) &#123;</span><br><span class="line"></span><br><span class="line">counter[<span class="number">0</span>]++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> l &amp;&amp; r &amp;&amp; root.val == val;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/250.jpg" alt="250"></p>
+<p><em><strong>366. Find Leaves of Binary Tree</strong></em></p>
+<ul>
+<li>带高度的postOrder 很重要</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">int</span>  <span class="title">helper</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res, TreeNode root)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  leftHeight = helper(res, root.left);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  rightHeight = helper(res, root.right);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  rootHeight = Math.max(leftHeight, rightHeight)+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (res.size() == rootHeight) res.add(<span class="keyword">new</span>  ArrayList&lt;&gt;());</span><br><span class="line"></span><br><span class="line">res.get(rootHeight).add(root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> rootHeight;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/366.jpg" alt="366"></p>
+<p><em><strong>337. House Robber III</strong></em></p>
+<ul>
+<li><p>这是一个分情况返回累加最大值的问题，helper内初始化一个变量，最后返回</p>
+</li>
+<li><p>在左右子树时计算选择隔行的情况，在中节点出计算选择下一行的情况，最后返回较大值</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">int</span>  <span class="title">helper</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root.left != <span class="keyword">null</span>)&#123;</span><br><span class="line"></span><br><span class="line">left += helper(root.left.left)+helper(root.left.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root.right != <span class="keyword">null</span>)&#123;</span><br><span class="line"></span><br><span class="line">right += helper(root.right.left)+helper(root.right.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  Math.max(root.val+left+right, helper(root.left)+helper(root.right));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><em><strong>107. Binary Tree Level Order Traversal II</strong></em></p>
+<ul>
+<li>考LinkedList的addFirst操作，声明的时候要<code>LinkedList&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();</code></li>
+</ul>
+<p><em><strong>103. Binary Tree Zigzag Level Order Traversal</strong></em></p>
+<ul>
+<li>Level Order Traversal，加个boolean判断左右</li>
+</ul>
+<p><em><strong>199. Binary Tree Right Side View (BFS+Preorder)</strong></em></p>
+<ul>
+<li><p>BFS, 用Queue进行level order tarversal，每当poll出最后一个node时添加到res中</p>
+</li>
+<li><p>DFS, preOrder，递增变量是树的<code>level (start from 0)</code>, 每当<code>queue.size() == level</code>时，就添加当前root</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span>  <span class="title">helper</span><span class="params">(TreeNode root, List&lt;Integer&gt; res, <span class="keyword">int</span> level)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(level == res.size()) res.add(root.val);</span><br><span class="line"></span><br><span class="line">helper(root.right, res, level+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">helper(root.left, res, level+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="BST"><a href="#BST" class="headerlink" title="BST"></a>BST</h2><p><em><strong>98. Validate Binary Search Tree</strong></em></p>
+<ul>
+<li><p>考察BST的性质，从root来看，左半边子树都比root小，右半边子树都比root大，所以可以传参min和max</p>
+</li>
+<li><p>DFS，双pre，在中节点处判断是否满足条件，（min和max声明为Integer类型，默认null），然后返回&amp;&amp;同时递归</p>
+</li>
+<li><p>BFS, 标准的遍历，记录preNode，在中节点处判断root和pre的大小</p>
+</li>
+</ul>
+<p><em><strong>235. Lowest Common Ancestor of a BST &amp;&amp; 236. Lowest Common Ancestor of a Binary Tree</strong></em></p>
+<ul>
+<li><p>DFS, 顺序preOrder，传参pq，中节点当判断为Null或者p或者q时，返回root；实例化左右节点递归，最后判断左右null情况返回</p>
+</li>
+<li><p>Iterative, for BST, 有一种loop做法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  TreeNode  <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> ((root.val - p.val) * (root.val - q.val) &gt; <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">root = p.val &lt; root.val  ?  root.left  :  root.right;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> root;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>108. Convert Sorted Array to BST (binary search)</strong></em></p>
+<ul>
+<li>DFS, 经典的中点建树问题，BinarySearch，传参lo, hi</li>
+</ul>
+<p><em><strong>109. Convert sorted List to BST</strong></em></p>
+<ul>
+<li><p>类比108，快慢指针找中点，每次递归找中点，结束条件是<code>fast != tail &amp;&amp; fast.next != null</code></p>
+</li>
+<li><p>++注意：递归传参是head和tail，主函数调用时tail为null++</p>
+</li>
+</ul>
+<p><em><strong>173. BST iterator inorder</strong></em></p>
+<ul>
+<li>拆开的bfsInorder，每次call next()的时候，做一个while-pushAllLeft，popMid，toRight操作</li>
+</ul>
+<p><em><strong>230. Kth Smallest element in a BST (inorder)</strong></em></p>
+<ul>
+<li>BFS, 标准inOrder遍历，每次处理中节点的时候count–</li>
+</ul>
+<p><em><strong>297. Serialize and Deserialize BST (BFS)</strong></em></p>
+<ul>
+<li><p>用标准的queue level order traversal。==Stack和Queue是可以存放null元素的==</p>
+</li>
+<li><p>也可以用DFS preOrder，比较快</p>
+</li>
+</ul>
+<p><em><strong>285. Inorder Sucessor in BST</strong></em></p>
+<ul>
+<li>inOrder 前后node的问题，都可以转化为BFS中节点处记录pre的问题。</li>
+</ul>
+<p><em><strong>270. Closest BST value (preorder)</strong></em></p>
+<ul>
+<li>利用BST的性质进行while-loop遍历，更新一个最优值</li>
+</ul>
+<p><em><strong>669. Trim BST</strong></em></p>
+<ul>
+<li><p>这种题看上去操作很复杂，其实recursive很容易就统解决了，递归返回实例化的TreeNode (root)</p>
+</li>
+<li><p>preOrder DFS，先判断中节点的两种极端情况，直接剪掉一半，然后实例化分别递归<code>root.left</code>和<code>root.right</code>，最后返回root</p>
+</li>
+</ul>
+<p><em><strong>272. Cloest BST value II (Inorder)</strong></em></p>
+<ul>
+<li><p>先从上到下按性质走一遍树，双Stack记录大小node。 ++会漏掉一些node，e.g.遇到大的节点时，下一个往左走，那么node.right就漏掉了，反之亦然++</p>
+</li>
+<li><p>然后分情况操作small和large stack，先把topNode的下一个漏掉的加进去，然后用while-loop继续添加</p>
+</li>
+</ul>
+<p><em><strong>99. Recover BST (inorder)</strong></em></p>
+<ul>
+<li><p>还是利用BST的性质，inOrder BST的结果是一个递增数列，e.g. 1,2,3,4,5 题中说有两个数调换了位置，所以两种情况++1. 相邻 2. 不相邻++ 1. 出现一次<code>pre.val &gt; root.val</code> 2. 出现两次<code>pre.val &gt; root.val</code></p>
+</li>
+<li><p>设first, second两个null，第一次更新fisrt，每次都second = root</p>
+</li>
+</ul>
+<h2 id="有些题"><a href="#有些题" class="headerlink" title="有些题"></a>有些题</h2><p><em><strong>117. Populating Next Right Pointers in Each Node II</strong></em></p>
+<ul>
+<li><p>类比P116的满二叉树，本题采用通式，相当于levelOrder Traversal</p>
+</li>
+<li><p>while-loop循环root.next，每次设置一个cur，一个dummy，cur从左向右走，到下一层时root = dummy.next;</p>
+</li>
+</ul>
+<p><em><strong>314. Binary Tree Vertical order Traversal</strong></em></p>
+<ul>
+<li><p>BFS, levelOrderTraversal, root的index是0，leftNode: index-1, rightNode: index+1</p>
+</li>
+<li><p>用双Queue配合HashMap做，一个queue存node， 一个queue存index，记录min和max，mapl里每个index对应一个ArrayList<treenode></treenode></p>
+</li>
+</ul>
+<p><em><strong>96. Unique Binary search tree (Important)</strong></em></p>
+<ul>
+<li><p>DP问题，==死记硬背==，套公式:</p>
+</li>
+<li><p><code>F(n) = F(0) * F(n-1) + F(1) * F(n-2) + F(2) * F(n-3) + ... + F(n-2) * F(1) + F(n-1) * F(0)</code></p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//累加求DP[n]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span>  level = <span class="number">2</span>; level &lt;=n; level++)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span>  root = <span class="number">1</span>; root&lt;=level; root++)</span><br><span class="line"></span><br><span class="line">dp[level] += dp[level-root]*dp[root-<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<p><em><strong>156. Binary Tree Upside Down</strong></em></p>
+<ul>
+<li><p>此题为左单肩树，所有右子树都为叶子或与左子树共用父亲</p>
+</li>
+<li><p>对于最基本的左中右，upSideDown以后，<code>左.left=中，左.right=右，中.left=中.right=null</code></p>
+</li>
+<li><p>可以用BFS和DFS做，<a href="https://leetcode.com/problems/binary-tree-upside-down/discuss/49406/Java-recursive-(O(logn" target="_blank" rel="noopener">参考代码</a>-space)-and-iterative-solutions-(O(1)-space)-with-explanation-and-figure)</p>
+</li>
+</ul>
+<p><em><strong>114. Flatten Binary Tree to Linked List (seldom)</strong></em></p>
+<ul>
+<li><p>实际上就是按preOrder的顺序把所有node全都弄到右边</p>
+</li>
+<li><p>因为此题要求In-Place，所以只能用DFS，建一个全局变量<code>preNode</code>，注意此题在递归的时候<strong>先右后左</strong>，最后进行root的赋值操作</p>
+</li>
+</ul>
+<p><em><strong>255. Verify Preorder Sequence in BST (Seldom)</strong></em></p>
+<ul>
+<li><p>此题默认也是inPlace来做，利用BST的性质，用一个stack来存node.val, 元素比top小的话就push，大的话就先把之前小的都pop出，再存大的，更新minVal，只要新val小于min就一定false</p>
+</li>
+<li><p>隐藏性质，当遇到比peek值大的元素，说明进入了当前树或者当前子树的right subTree，如果再出现比该值小的则说明false，出现更大的就进入下一个右子树或者大树的右半边树</p>
+</li>
+</ul>
+<p><em><strong>333. Largest BST subtree (Seldom)</strong></em></p>
+<p>-</p>
+<ol start="222">
+<li><p>Count Complete Tree Nodes (seldom)</p>
+</li>
+<li><p>Construct Binary Tree From 3种order (seldom)</p>
+</li>
+<li><p>Unique Binary Search Trees II (seldom)</p>
+</li>
+<li><p>Verify Preorder Serialization of a Binary Tree (Seldom)</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tree/" rel="tag"># tree</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/30/subSet Problems/" rel="next" title="subSet Problems">
+                <i class="fa fa-chevron-left"></i> subSet Problems
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zun Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/UFWestlife" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:uflzun93@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preorder"><span class="nav-number">1.</span> <span class="nav-text">Preorder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Postorder"><span class="nav-number">2.</span> <span class="nav-text">Postorder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">3.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST"><span class="nav-number">4.</span> <span class="nav-text">BST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有些题"><span class="nav-number">5.</span> <span class="nav-text">有些题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zun Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
