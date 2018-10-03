@@ -79,21 +79,22 @@
 
 
 
-<meta name="description" content="Preorder100. Same Tree  可套用模板，双pre  12345678910111213public  boolean  isSameTree(TreeNode p, TreeNode q) &amp;#123;if(p == null &amp;amp;&amp;amp; q == null) return  true;if(p == null || q == null) return  false;">
+<meta name="description" content="This is a summary of Tree Problems in LeetCode. Including the thought, code and some tricks.  Preorder100. Same Tree  可套用模板，双pre123456public boolean isSameTree(TreeNode p, TreeNode q) &amp;#123;    if(p">
 <meta name="keywords" content="tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Tree Problems Summary">
 <meta property="og:url" content="http://yoursite.com/2018/10/01/LeetCode-Tree-Problems-Summary/index.html">
 <meta property="og:site_name" content="Zun Wang personal blog">
-<meta property="og:description" content="Preorder100. Same Tree  可套用模板，双pre  12345678910111213public  boolean  isSameTree(TreeNode p, TreeNode q) &amp;#123;if(p == null &amp;amp;&amp;amp; q == null) return  true;if(p == null || q == null) return  false;">
+<meta property="og:description" content="This is a summary of Tree Problems in LeetCode. Including the thought, code and some tricks.  Preorder100. Same Tree  可套用模板，双pre123456public boolean isSameTree(TreeNode p, TreeNode q) &amp;#123;    if(p">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/imgs/124.jpg">
 <meta property="og:image" content="http://yoursite.com/imgs/250.jpg">
 <meta property="og:image" content="http://yoursite.com/imgs/366.jpg">
-<meta property="og:updated_time" content="2018-10-03T05:28:26.764Z">
+<meta property="og:updated_time" content="2018-10-03T06:57:32.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Tree Problems Summary">
-<meta name="twitter:description" content="Preorder100. Same Tree  可套用模板，双pre  12345678910111213public  boolean  isSameTree(TreeNode p, TreeNode q) &amp;#123;if(p == null &amp;amp;&amp;amp; q == null) return  true;if(p == null || q == null) return  false;">
-<meta name="twitter:image" content="http://yoursite.com/imgs/250.jpg">
+<meta name="twitter:description" content="This is a summary of Tree Problems in LeetCode. Including the thought, code and some tricks.  Preorder100. Same Tree  可套用模板，双pre123456public boolean isSameTree(TreeNode p, TreeNode q) &amp;#123;    if(p">
+<meta name="twitter:image" content="http://yoursite.com/imgs/124.jpg">
 
 
 
@@ -379,39 +380,35 @@
       
 
       
-        <h2 id="Preorder"><a href="#Preorder" class="headerlink" title="Preorder"></a>Preorder</h2><p><em><strong>100. Same Tree</strong></em></p>
-<ul>
-<li>可套用模板，双pre</li>
+        <ul>
+<li>This is a summary of Tree Problems in LeetCode. Including the thought, code and some tricks.</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span>  <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(p == <span class="keyword">null</span> &amp;&amp; q == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(p == <span class="keyword">null</span> || q == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(p.val != q.val) <span class="keyword">return</span>  <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Preorder"><a href="#Preorder" class="headerlink" title="Preorder"></a>Preorder</h2><p><em><strong>100. Same Tree</strong></em></p>
+<ul>
+<li>可套用模板，双pre<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p == <span class="keyword">null</span> &amp;&amp; q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(p == <span class="keyword">null</span> || q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(p.val != q.val) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <a id="more"></a>
 <p><em><strong>101. Symmetric Tree Preorder</strong></em></p>
 <ul>
-<li><p>SameTree拓展</p>
-</li>
-<li><p>判断root的两个子树是不是sameTree</p>
+<li>SameTree拓展  </li>
+<li>判断root的两个子树是不是sameTree<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">return</span> isSameTree(root.left, root.right);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span>  <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  isSameTree(root.left, root.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><em><strong>572. SubTree of Another Tree</strong></em></p>
 <ul>
-<li><p>SameTree拓展</p>
-</li>
-<li><p>先判断是不是sameTree，然后递归调用一半左一半右</p>
-</li>
+<li>SameTree拓展</li>
+<li>先判断是不是sameTree，然后递归调用一半左一半右</li>
 </ul>
 <p><em><strong>257. Binary Tree Paths</strong></em></p>
 <ul>
-<li>DFS preOrder模板，判断null返回，判断叶子加上val，每递归一层加上-&gt;+val</li>
+<li>DFS preOrder模板，判断null返回，判断叶子加上val，每递归一层加上-&gt;+val </li>
 </ul>
 <p><em><strong>112. Path Sum + 113. Path Sum II + ==437. Path Sum III==</strong></em></p>
 <ul>
-<li><p>PathSum: 双pre，判断叶子，return用or连接左右递归</p>
-</li>
-<li><p>PathSumII: 顺序preOrder，==两个递归完成后进行==<code>list.remove(list.size()-1)</code></p>
-</li>
-<li><p>++PathSumIII: <a href="https://leetcode.com/problems/path-sum-iii/discuss/91884/Simple-AC-Java-Solution-DFS" target="_blank" rel="noopener">Solution</a> 顺序Pre加上prefixSum的HashMap++</p>
-</li>
+<li>PathSum: 双pre，判断叶子，return用or连接左右递归  </li>
+<li>PathSumII: 顺序preOrder，==两个递归完成后进行==<code>list.remove(list.size()-1)</code>    </li>
+<li>++PathSumIII: <a href="https://leetcode.com/problems/path-sum-iii/discuss/91884/Simple-AC-Java-Solution-DFS" target="_blank" rel="noopener">Solution</a> 顺序Pre加上prefixSum的HashMap++</li>
 </ul>
 <p><em><strong>129. Sum Root to Leaf Numbers</strong></em></p>
 <ul>
@@ -419,128 +416,103 @@
 </ul>
 <p><em><strong>298. Binary Tree Longest Consecutive Sequence</strong></em></p>
 <ul>
-<li><p>顺序Pre，传参sum，每到一个节点判断val是否连上，连上的话sum++，连不上的话sum=1（重置sum）</p>
-</li>
-<li><p>判断sum之后要进行maxRes操作，取当前最大值作为res (res是全局变量)</p>
-</li>
+<li>顺序Pre，传参sum，每到一个节点判断val是否连上，连上的话sum++，连不上的话sum=1（重置sum）  </li>
+<li>判断sum之后要进行maxRes操作，取当前最大值作为res (res是全局变量)</li>
 </ul>
-<p><em><strong>111. Minimum of Binary Tree</strong></em></p>
+<p><em><strong>111. Minimum  of Binary Tree</strong></em></p>
 <ul>
 <li>顺序pre，叶子节点更新minRes，参照最大深度的双pre，两种方法都能做</li>
 </ul>
 <p><em><strong>654. Maximum Binary Tree</strong></em></p>
 <ul>
-<li><p>DFS，顺序pre，传参start, end，找start，end中的最大值建root，然后顺序递归，左start，max-1，右max+1，end</p>
-</li>
-<li><p>BFS, <a href="https://leetcode.com/problems/maximum-binary-tree/discuss/106156/Java-worst-case-O(N" target="_blank" rel="noopener">Solution Code</a>-solution)，要用Deque做</p>
-</li>
+<li>DFS，顺序pre，传参start, end，找start，end中的最大值建root，然后顺序递归，左start，max-1，右max+1，end    </li>
+<li>BFS, <a href="https://leetcode.com/problems/maximum-binary-tree/discuss/106156/Java-worst-case-O(N" target="_blank" rel="noopener">Solution Code</a>-solution)，要用Deque做 </li>
 </ul>
 <h2 id="Postorder"><a href="#Postorder" class="headerlink" title="Postorder"></a>Postorder</h2><p><em><strong>226. Invert Binary Tree (Postorder+BFS)</strong></em></p>
 <ul>
-<li><p>BFS，level order traversal，用queue</p>
-</li>
-<li><p>DFS, 顺序postOrder，实例化递归返回leftNode和rightNode，中点位置进行对调操作，返回root</p>
-</li>
+<li>BFS，level order traversal，用queue   </li>
+<li>DFS, 顺序postOrder，实例化递归返回leftNode和rightNode，中点位置进行对调操作，返回root </li>
 </ul>
 <p><em><strong>104. Maximum Depth of Binary Tree</strong></em></p>
 <ul>
-<li><p>DFS, 可以参照111. MinimumDepthOfBT来顺序递归，叶子更新maxRes</p>
-</li>
-<li><p>也可以双post？ 不传参的话==return Math.max(helper(root.left), helper(root.right))+1==，传参level的话每次调用level+1,返回左右最大值</p>
-</li>
+<li>DFS, 可以参照111. MinimumDepthOfBT来顺序递归，叶子更新maxRes  </li>
+<li>也可以双post？ 不传参的话==return Math.max(helper(root.left), helper(root.right))+1==，传参level的话每次调用level+1,返回左右最大值</li>
 </ul>
 <p><em><strong>110. Balanced Binary Tree</strong></em></p>
 <ul>
-<li>DFS, 基于MaximumDepth，顺序post，在helper函数中实例left和right的maxDepth，然后root处进行判断，返回的是 ==Math.max(l, r)+1==</li>
+<li>DFS, 基于MaximumDepth，顺序post，在helper函数中实例left和right的maxDepth，然后root处进行判断，返回的是 ==Math.max(l, r)+1== </li>
 </ul>
 <p><em><strong>116. Populating Next Right Pointers in Each Node</strong></em></p>
 <ul>
-<li><p>BFS, LevelOrder</p>
-</li>
-<li><p>DFS, preOrder，中节点处操作左右next, <code>root.right.next = root.next.left</code></p>
-</li>
+<li>BFS, LevelOrder</li>
+<li>DFS, preOrder，中节点处操作左右next, <code>root.right.next = root.next.left</code></li>
 </ul>
 <p><em><strong>236. Lowest Common Ancestor of Binary Tree</strong></em></p>
 <ul>
-<li>DFS, 顺序postOrder，终结条件：判断为空或者p q时return root， 实例化左右递归，操作中节点时，进行三重判断</li>
+<li>DFS, 顺序postOrder，终结条件：判断为空或者p q时return root， 实例化左右递归，操作中节点时，进行三重判断<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span> || root == p || root == q)</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        </span><br><span class="line">        TreeNode left = lowestCommonAncestor(root.left, p, q);</span><br><span class="line">        TreeNode right = lowestCommonAncestor(root.right, p, q);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (left != <span class="keyword">null</span> &amp;&amp; right != <span class="keyword">null</span>) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (left == <span class="keyword">null</span>) <span class="keyword">return</span> right;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> left;</span><br><span class="line">        <span class="comment">//return left != null &amp;&amp; right != null ? root : (left != null ? left : right);</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  TreeNode  <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(root == <span class="keyword">null</span> || root == p || root == q)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> root;</span><br><span class="line"></span><br><span class="line">TreeNode  left = lowestCommonAncestor(root.left, p, q);</span><br><span class="line"></span><br><span class="line">TreeNode  right = lowestCommonAncestor(root.right, p, q);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (left != <span class="keyword">null</span> &amp;&amp; right != <span class="keyword">null</span>) <span class="keyword">return</span> root;</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>  <span class="keyword">if</span> (left == <span class="keyword">null</span>) <span class="keyword">return</span> right;</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>  <span class="keyword">return</span> left;</span><br><span class="line"></span><br><span class="line"><span class="comment">//return left != null &amp;&amp; right != null ? root : (left != null ? left : right);</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><em><strong>124. Binary Tree Maximum Path Sum</strong></em></p>
 <ul>
-<li><p>DFS，顺序postOrder，在中节点处维护一个maxRes</p>
-</li>
-<li><p>helper函数记录在每个中节点处的1. maxRes 2.返回该节点左右子树的累计最大值加上自己的val</p>
+<li>DFS，顺序postOrder，在中节点处维护一个maxRes  </li>
+<li>helper函数记录在每个中节点处的1. maxRes 2.返回该节点左右子树的累计最大值加上自己的val<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] res)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = Math.max(<span class="number">0</span>, helper(root.left, res));</span><br><span class="line">        <span class="keyword">int</span> right = Math.max(<span class="number">0</span>, helper(root.right, res));</span><br><span class="line">        res[<span class="number">0</span>] = Math.max(res[<span class="number">0</span>], left+right+root.val);</span><br><span class="line">        <span class="keyword">return</span> Math.max(left, right)+root.val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">int</span>  <span class="title">helper</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] res)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  left = Math.max(<span class="number">0</span>, helper(root.left, res));</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  right = Math.max(<span class="number">0</span>, helper(root.right, res));</span><br><span class="line"></span><br><span class="line">res[<span class="number">0</span>] = Math.max(res[<span class="number">0</span>], left+right+root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  Math.max(left, right)+root.val;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/124.jpg" alt="124"></p>
 <p><em><strong>250. Count Univalue Subtrees</strong></em></p>
 <ul>
-<li><p>题意是求多少个相同val的子树，所以要看每个根节点，两种情况1. 左右都null 2. 左右和根节点val相同</p>
-</li>
-<li><p>DFS，顺序postOrder，return boolean，传参根节点val，实例化递归左右子树</p>
-</li>
-<li><p>在根节点判断左右Boolean值，返回并判断根节点val和父亲val是否相等</p>
+<li>题意是求多少个相同val的子树，所以要看每个根节点，两种情况1. 左右都null 2. 左右和根节点val相同     </li>
+<li>DFS，顺序postOrder，return boolean，传参根节点val，实例化递归左右子树     </li>
+<li>在根节点判断左右Boolean值，返回并判断根节点val和父亲val是否相等<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">count</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] counter, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">boolean</span> l = count(root.left, counter, root.val);</span><br><span class="line">        <span class="keyword">boolean</span> r = count(root.right, counter, root.val);</span><br><span class="line">        <span class="keyword">if</span> (l &amp;&amp; r) &#123;</span><br><span class="line">            counter[<span class="number">0</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l &amp;&amp; r &amp;&amp; root.val == val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">boolean</span>  <span class="title">count</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] counter, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">boolean</span>  l = count(root.left, counter, root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">boolean</span>  r = count(root.right, counter, root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (l &amp;&amp; r) &#123;</span><br><span class="line"></span><br><span class="line">counter[<span class="number">0</span>]++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> l &amp;&amp; r &amp;&amp; root.val == val;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><img src="/imgs/250.jpg" alt="250"></p>
 <p><em><strong>366. Find Leaves of Binary Tree</strong></em></p>
 <ul>
-<li>带高度的postOrder 很重要</li>
+<li>带高度的postOrder 很重要<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res, TreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> leftHeight = helper(res, root.left);</span><br><span class="line">        <span class="keyword">int</span> rightHeight = helper(res, root.right);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> rootHeight = Math.max(leftHeight, rightHeight)+<span class="number">1</span>; </span><br><span class="line">        <span class="keyword">if</span> (res.size() == rootHeight) res.add(<span class="keyword">new</span> ArrayList&lt;&gt;());</span><br><span class="line">        </span><br><span class="line">        res.get(rootHeight).add(root.val);</span><br><span class="line">        <span class="keyword">return</span> rootHeight;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">int</span>  <span class="title">helper</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res, TreeNode root)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  leftHeight = helper(res, root.left);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  rightHeight = helper(res, root.right);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  rootHeight = Math.max(leftHeight, rightHeight)+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (res.size() == rootHeight) res.add(<span class="keyword">new</span>  ArrayList&lt;&gt;());</span><br><span class="line"></span><br><span class="line">res.get(rootHeight).add(root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> rootHeight;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><img src="/imgs/366.jpg" alt="366"></p>
 <p><em><strong>337. House Robber III</strong></em></p>
 <ul>
-<li><p>这是一个分情况返回累加最大值的问题，helper内初始化一个变量，最后返回</p>
-</li>
-<li><p>在左右子树时计算选择隔行的情况，在中节点出计算选择下一行的情况，最后返回较大值</p>
+<li>这是一个分情况返回累加最大值的问题，helper内初始化一个变量，最后返回</li>
+<li>在左右子树时计算选择隔行的情况，在中节点出计算选择下一行的情况，最后返回较大值<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (root.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">            left += helper(root.left.left)+helper(root.left.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">            right += helper(root.right.left)+helper(root.right.right);</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">return</span> Math.max(root.val+left+right, helper(root.left)+helper(root.right));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span>  <span class="keyword">int</span>  <span class="title">helper</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root.left != <span class="keyword">null</span>)&#123;</span><br><span class="line"></span><br><span class="line">left += helper(root.left.left)+helper(root.left.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root.right != <span class="keyword">null</span>)&#123;</span><br><span class="line"></span><br><span class="line">right += helper(root.right.left)+helper(root.right.right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  Math.max(root.val+left+right, helper(root.left)+helper(root.right));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><em><strong>107. Binary Tree Level Order Traversal II</strong></em></p>
 <ul>
-<li>考LinkedList的addFirst操作，声明的时候要<code>LinkedList&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();</code></li>
+<li>考LinkedList的addFirst操作，声明的时候要<code>LinkedList&lt;List&lt;Integer&gt;&gt; res = new LinkedList&lt;&gt;();</code>  </li>
 </ul>
 <p><em><strong>103. Binary Tree Zigzag Level Order Traversal</strong></em></p>
 <ul>
 <li>Level Order Traversal，加个boolean判断左右</li>
 </ul>
-<p><em><strong>199. Binary Tree Right Side View (BFS+Preorder)</strong></em></p>
+<p><em><strong>199. Binary Tree Right Side View (BFS+Preorder)</strong></em> </p>
 <ul>
-<li><p>BFS, 用Queue进行level order tarversal，每当poll出最后一个node时添加到res中</p>
-</li>
-<li><p>DFS, preOrder，递增变量是树的<code>level (start from 0)</code>, 每当<code>queue.size() == level</code>时，就添加当前root</p>
+<li>BFS, 用Queue进行level order tarversal，每当poll出最后一个node时添加到res中</li>
+<li>DFS, preOrder，递增变量是树的<code>level (start from 0)</code>, 每当<code>queue.size() == level</code>时，就添加当前root<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode root, List&lt;Integer&gt; res, <span class="keyword">int</span> level)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span>(level == res.size()) res.add(root.val);</span><br><span class="line">        helper(root.right, res, level+<span class="number">1</span>);</span><br><span class="line">        helper(root.left, res, level+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span>  <span class="title">helper</span><span class="params">(TreeNode root, List&lt;Integer&gt; res, <span class="keyword">int</span> level)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(level == res.size()) res.add(root.val);</span><br><span class="line"></span><br><span class="line">helper(root.right, res, level+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">helper(root.left, res, level+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="BST"><a href="#BST" class="headerlink" title="BST"></a>BST</h2><p><em><strong>98. Validate Binary Search Tree</strong></em></p>
 <ul>
-<li><p>考察BST的性质，从root来看，左半边子树都比root小，右半边子树都比root大，所以可以传参min和max</p>
-</li>
-<li><p>DFS，双pre，在中节点处判断是否满足条件，（min和max声明为Integer类型，默认null），然后返回&amp;&amp;同时递归</p>
-</li>
-<li><p>BFS, 标准的遍历，记录preNode，在中节点处判断root和pre的大小</p>
-</li>
+<li>考察BST的性质，从root来看，左半边子树都比root小，右半边子树都比root大，所以可以传参min和max</li>
+<li>DFS，双pre，在中节点处判断是否满足条件，（min和max声明为Integer类型，默认null），然后返回&amp;&amp;同时递归</li>
+<li>BFS, 标准的遍历，记录preNode，在中节点处判断root和pre的大小</li>
 </ul>
 <p><em><strong>235. Lowest Common Ancestor of a BST &amp;&amp; 236. Lowest Common Ancestor of a Binary Tree</strong></em></p>
 <ul>
-<li><p>DFS, 顺序preOrder，传参pq，中节点当判断为Null或者p或者q时，返回root；实例化左右节点递归，最后判断左右null情况返回</p>
-</li>
-<li><p>Iterative, for BST, 有一种loop做法</p>
+<li>DFS, 顺序preOrder，传参pq，中节点当判断为Null或者p或者q时，返回root；实例化左右节点递归，最后判断左右null情况返回</li>
+<li>Iterative, for BST, 有一种loop做法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> ((root.val - p.val) * (root.val - q.val) &gt; <span class="number">0</span>)</span><br><span class="line">        root = p.val &lt; root.val ? root.left : root.right;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span>  TreeNode  <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> ((root.val - p.val) * (root.val - q.val) &gt; <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">root = p.val &lt; root.val  ?  root.left  :  root.right;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> root;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><em><strong>108. Convert Sorted Array to BST (binary search)</strong></em></p>
 <ul>
 <li>DFS, 经典的中点建树问题，BinarySearch，传参lo, hi</li>
 </ul>
 <p><em><strong>109. Convert sorted List to BST</strong></em></p>
 <ul>
-<li><p>类比108，快慢指针找中点，每次递归找中点，结束条件是<code>fast != tail &amp;&amp; fast.next != null</code></p>
-</li>
-<li><p>++注意：递归传参是head和tail，主函数调用时tail为null++</p>
-</li>
+<li>类比108，快慢指针找中点，每次递归找中点，结束条件是<code>fast != tail &amp;&amp; fast.next != null</code></li>
+<li>++注意：递归传参是head和tail，主函数调用时tail为null++  </li>
 </ul>
 <p><em><strong>173. BST iterator inorder</strong></em></p>
 <ul>
@@ -552,10 +524,8 @@
 </ul>
 <p><em><strong>297. Serialize and Deserialize BST (BFS)</strong></em></p>
 <ul>
-<li><p>用标准的queue level order traversal。==Stack和Queue是可以存放null元素的==</p>
-</li>
-<li><p>也可以用DFS preOrder，比较快</p>
-</li>
+<li>用标准的queue level order traversal。==Stack和Queue是可以存放null元素的==</li>
+<li>也可以用DFS preOrder，比较快</li>
 </ul>
 <p><em><strong>285. Inorder Sucessor in BST</strong></em></p>
 <ul>
@@ -567,81 +537,60 @@
 </ul>
 <p><em><strong>669. Trim BST</strong></em></p>
 <ul>
-<li><p>这种题看上去操作很复杂，其实recursive很容易就统解决了，递归返回实例化的TreeNode (root)</p>
-</li>
-<li><p>preOrder DFS，先判断中节点的两种极端情况，直接剪掉一半，然后实例化分别递归<code>root.left</code>和<code>root.right</code>，最后返回root</p>
-</li>
+<li>这种题看上去操作很复杂，其实recursive很容易就统解决了，递归返回实例化的TreeNode (root)</li>
+<li>preOrder DFS，先判断中节点的两种极端情况，直接剪掉一半，然后实例化分别递归<code>root.left</code>和<code>root.right</code>，最后返回root</li>
 </ul>
 <p><em><strong>272. Cloest BST value II (Inorder)</strong></em></p>
 <ul>
-<li><p>先从上到下按性质走一遍树，双Stack记录大小node。 ++会漏掉一些node，e.g.遇到大的节点时，下一个往左走，那么node.right就漏掉了，反之亦然++</p>
-</li>
-<li><p>然后分情况操作small和large stack，先把topNode的下一个漏掉的加进去，然后用while-loop继续添加</p>
-</li>
+<li>先从上到下按性质走一遍树，双Stack记录大小node。 ++会漏掉一些node，e.g.遇到大的节点时，下一个往左走，那么node.right就漏掉了，反之亦然++</li>
+<li>然后分情况操作small和large stack，先把topNode的下一个漏掉的加进去，然后用while-loop继续添加</li>
 </ul>
 <p><em><strong>99. Recover BST (inorder)</strong></em></p>
 <ul>
-<li><p>还是利用BST的性质，inOrder BST的结果是一个递增数列，e.g. 1,2,3,4,5 题中说有两个数调换了位置，所以两种情况++1. 相邻 2. 不相邻++ 1. 出现一次<code>pre.val &gt; root.val</code> 2. 出现两次<code>pre.val &gt; root.val</code></p>
-</li>
-<li><p>设first, second两个null，第一次更新fisrt，每次都second = root</p>
-</li>
+<li>还是利用BST的性质，inOrder BST的结果是一个递增数列，e.g. 1,2,3,4,5 题中说有两个数调换了位置，所以两种情况++1. 相邻 2. 不相邻++ 1. 出现一次<code>pre.val &gt; root.val</code> 2. 出现两次<code>pre.val &gt; root.val</code> </li>
+<li>设first, second两个null，第一次更新fisrt，每次都second = root</li>
 </ul>
 <h2 id="有些题"><a href="#有些题" class="headerlink" title="有些题"></a>有些题</h2><p><em><strong>117. Populating Next Right Pointers in Each Node II</strong></em></p>
 <ul>
-<li><p>类比P116的满二叉树，本题采用通式，相当于levelOrder Traversal</p>
-</li>
-<li><p>while-loop循环root.next，每次设置一个cur，一个dummy，cur从左向右走，到下一层时root = dummy.next;</p>
-</li>
+<li>类比P116的满二叉树，本题采用通式，相当于levelOrder Traversal</li>
+<li>while-loop循环root.next，每次设置一个cur，一个dummy，cur从左向右走，到下一层时root = dummy.next;</li>
 </ul>
 <p><em><strong>314. Binary Tree Vertical order Traversal</strong></em></p>
 <ul>
-<li><p>BFS, levelOrderTraversal, root的index是0，leftNode: index-1, rightNode: index+1</p>
-</li>
-<li><p>用双Queue配合HashMap做，一个queue存node， 一个queue存index，记录min和max，mapl里每个index对应一个ArrayList<treenode></treenode></p>
-</li>
+<li>BFS, levelOrderTraversal, root的index是0，leftNode: index-1, rightNode: index+1</li>
+<li>用双Queue配合HashMap做，一个queue存node， 一个queue存index，记录min和max，mapl里每个index对应一个ArrayList<treenode></treenode></li>
 </ul>
 <p><em><strong>96. Unique Binary search tree (Important)</strong></em></p>
 <ul>
-<li><p>DP问题，==死记硬背==，套公式:</p>
-</li>
-<li><p><code>F(n) = F(0) * F(n-1) + F(1) * F(n-2) + F(2) * F(n-3) + ... + F(n-2) * F(1) + F(n-1) * F(0)</code></p>
+<li>DP问题，==死记硬背==，套公式: </li>
+<li><code>F(n) = F(0) * F(n-1) + F(1) * F(n-2) + F(2) * F(n-3) + ... + F(n-2) * F(1) + F(n-1) * F(0)</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//累加求DP[n]</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> level = <span class="number">2</span>; level &lt;=n; level++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> root = <span class="number">1</span>; root&lt;=level; root++)</span><br><span class="line">        dp[level] += dp[level-root]*dp[root-<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//累加求DP[n]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span>  level = <span class="number">2</span>; level &lt;=n; level++)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span>  root = <span class="number">1</span>; root&lt;=level; root++)</span><br><span class="line"></span><br><span class="line">dp[level] += dp[level-root]*dp[root-<span class="number">1</span>];</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><em><strong>156. Binary Tree Upside Down</strong></em></p>
 <ul>
-<li><p>此题为左单肩树，所有右子树都为叶子或与左子树共用父亲</p>
-</li>
-<li><p>对于最基本的左中右，upSideDown以后，<code>左.left=中，左.right=右，中.left=中.right=null</code></p>
-</li>
-<li><p>可以用BFS和DFS做，<a href="https://leetcode.com/problems/binary-tree-upside-down/discuss/49406/Java-recursive-(O(logn" target="_blank" rel="noopener">参考代码</a>-space)-and-iterative-solutions-(O(1)-space)-with-explanation-and-figure)</p>
-</li>
+<li>此题为左单肩树，所有右子树都为叶子或与左子树共用父亲</li>
+<li>对于最基本的左中右，upSideDown以后，<code>左.left=中，左.right=右，中.left=中.right=null</code></li>
+<li>可以用BFS和DFS做，<a href="https://leetcode.com/problems/binary-tree-upside-down/discuss/49406/Java-recursive-(O(logn" target="_blank" rel="noopener">参考代码</a>-space)-and-iterative-solutions-(O(1)-space)-with-explanation-and-figure)</li>
 </ul>
 <p><em><strong>114. Flatten Binary Tree to Linked List (seldom)</strong></em></p>
 <ul>
-<li><p>实际上就是按preOrder的顺序把所有node全都弄到右边</p>
-</li>
-<li><p>因为此题要求In-Place，所以只能用DFS，建一个全局变量<code>preNode</code>，注意此题在递归的时候<strong>先右后左</strong>，最后进行root的赋值操作</p>
-</li>
+<li>实际上就是按preOrder的顺序把所有node全都弄到右边</li>
+<li>因为此题要求In-Place，所以只能用DFS，建一个全局变量<code>preNode</code>，注意此题在递归的时候<strong>先右后左</strong>，最后进行root的赋值操作</li>
 </ul>
 <p><em><strong>255. Verify Preorder Sequence in BST (Seldom)</strong></em></p>
 <ul>
-<li><p>此题默认也是inPlace来做，利用BST的性质，用一个stack来存node.val, 元素比top小的话就push，大的话就先把之前小的都pop出，再存大的，更新minVal，只要新val小于min就一定false</p>
-</li>
-<li><p>隐藏性质，当遇到比peek值大的元素，说明进入了当前树或者当前子树的right subTree，如果再出现比该值小的则说明false，出现更大的就进入下一个右子树或者大树的右半边树</p>
-</li>
+<li>此题默认也是inPlace来做，利用BST的性质，用一个stack来存node.val, 元素比top小的话就push，大的话就先把之前小的都pop出，再存大的，更新minVal，只要新val小于min就一定false</li>
+<li>隐藏性质，当遇到比peek值大的元素，说明进入了当前树或者当前子树的right subTree，如果再出现比该值小的则说明false，出现更大的就进入下一个右子树或者大树的右半边树</li>
 </ul>
 <p><em><strong>333. Largest BST subtree (Seldom)</strong></em></p>
-<p>-</p>
+<ul>
+<li></li>
+</ul>
 <ol start="222">
-<li><p>Count Complete Tree Nodes (seldom)</p>
-</li>
-<li><p>Construct Binary Tree From 3种order (seldom)</p>
-</li>
-<li><p>Unique Binary Search Trees II (seldom)</p>
-</li>
-<li><p>Verify Preorder Serialization of a Binary Tree (Seldom)</p>
-</li>
+<li>Count Complete Tree Nodes (seldom)</li>
+<li>Construct Binary Tree From 3种order (seldom)</li>
+<li>Unique Binary Search Trees II (seldom)</li>
+<li>Verify Preorder Serialization of a Binary Tree (Seldom)</li>
 </ol>
 
       
