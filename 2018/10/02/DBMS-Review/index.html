@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="review," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="DBMS Exam2 ReviewStructured Query Language (SQL) - Lecture 11SQL is the standard relational database language and is related to the tuple relational calculus.Standard enables easier switch to other DB">
+<meta name="keywords" content="review">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DBMS Review">
+<meta property="og:url" content="http://yoursite.com/2018/10/02/DBMS-Review/index.html">
+<meta property="og:site_name" content="Zun Wang personal blog">
+<meta property="og:description" content="DBMS Exam2 ReviewStructured Query Language (SQL) - Lecture 11SQL is the standard relational database language and is related to the tuple relational calculus.Standard enables easier switch to other DB">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-10-03T05:18:36.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DBMS Review">
+<meta name="twitter:description" content="DBMS Exam2 ReviewStructured Query Language (SQL) - Lecture 11SQL is the standard relational database language and is related to the tuple relational calculus.Standard enables easier switch to other DB">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/02/DBMS-Review/"/>
+
+
+
+
+
+  <title>DBMS Review | Zun Wang personal blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zun Wang personal blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/DBMS-Review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zun Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zun Wang personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DBMS Review</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-02T22:17:55-07:00">
+                2018-10-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DBMS/" itemprop="url" rel="index">
+                    <span itemprop="name">DBMS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="DBMS-Exam2-Review"><a href="#DBMS-Exam2-Review" class="headerlink" title="DBMS Exam2 Review"></a><center>DBMS Exam2 Review</center></h2><h3 id="Structured-Query-Language-SQL-Lecture-11"><a href="#Structured-Query-Language-SQL-Lecture-11" class="headerlink" title="Structured Query Language (SQL) - Lecture 11"></a>Structured Query Language (SQL) - Lecture 11</h3><p>SQL is the standard relational database language and is related to the <font color="red">tuple relational calculus</font>.<br><strong><em>Standard</em></strong> enables easier switch to other DBMS, queries remain unchanged.  </p>
+<p><strong>Main objectives</strong></p>
+<ul>
+<li>Create the database and relation structures</li>
+<li>Perform basic data management tasks, such as insertion, modification, and deletion of data from the relations</li>
+<li>Perform both simple and complex queries</li>
+<li>Be portable between different DBMS</li>
+<li>Perform the aforementioned services with minimal user efforts</li>
+<li>Perform the aforementioned services with maximum performance<a id="more"></a>
+</li>
+</ul>
+<p><strong>Components of SQL:</strong>  </p>
+<ol>
+<li>Data Definition Language (DDL): Commands for creating and changing the data structures for the three levels of a database.</li>
+<li>Data manipulation language (DML): Update commands for <strong>tuples</strong>, interactive formulation of <strong>queries</strong>.</li>
+<li>Embeded SQL and Dynamic SQL;</li>
+<li>Integrity;</li>
+<li>View Definition;</li>
+<li>Transaction Control</li>
+<li>Authorization.</li>
+</ol>
+<p><strong>SQL Data Types:</strong><br>Start at Page9.  </p>
+<p><strong>Integrity Constraints and Default Values</strong>  </p>
+<p><font color="red">Integrity constraints are the most important commands of the DDL:</font></p>
+<ul>
+<li>are conditions that restrict the possible database states;</li>
+<li>ensure the consistency of a database;</li>
+</ul>
+<p><code>It is recommended to specify the not null condition explicitly for each primary
+key, although this holds implicitly already for each primary key</code>   </p>
+<p><strong>Default values</strong> can be attaching the clause <code>default &lt;value&gt;</code> to the attribute definition. Will be set for every tuple if no explicit value declares. Otherwise, all will be <code>null</code>.  </p>
+<p><strong>Primary Keys</strong>    </p>
+<ul>
+<li>The clause <code>primary key (A1, …, An)</code> specifies that the attributes <code>(A1, …,
+An)</code> form the primary key of the relation R with respect to R.</li>
+<li>The set of selected attributes must be unique and minimal;</li>
+</ul>
+<h3 id="Structured-Query-Language-SQL-Lecture-12"><a href="#Structured-Query-Language-SQL-Lecture-12" class="headerlink" title="Structured Query Language (SQL) - Lecture 12"></a>Structured Query Language (SQL) - Lecture 12</h3><p><strong>Foreign Keys:</strong>   </p>
+<ul>
+<li>A foreign key value references (“points to”) a primary key value in another relation to represent an m:1-relationship of an E-R diagram;</li>
+<li>Definition of a foreign key by the <code>foreign key clause</code></li>
+<li>Foreign keys ensure <font color="red">referential integrity</font>, that is, there are no inconsistent or dangling references</li>
+<li>A foreign key can or cannot become (part of) the primary key of the relation schema into which it is imported.   </li>
+</ul>
+<p><strong>Candidate Keys:</strong></p>
+<ul>
+<li>Any unique and minimal set of attributes that could serve but has not been selected as a primary key;</li>
+<li>The fact that the attributes A1, …, An form a candidate key is specified by the integrity constraint ++unique++ (A1, …, An).  </li>
+</ul>
+<h4 id="SQL-DDL-Commands"><a href="#SQL-DDL-Commands" class="headerlink" title="SQL DDL Commands"></a>SQL DDL Commands</h4><ul>
+<li><p>Examples of Creation of a Relation Schema/Table Schema:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> professors</span><br><span class="line">(pers-<span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"> <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"> room <span class="built_in">int</span> <span class="keyword">unique</span>,</span><br><span class="line"> <span class="keyword">rank</span> <span class="built_in">char</span>(<span class="number">2</span>),</span><br><span class="line"> primary <span class="keyword">key</span> (pers-<span class="keyword">id</span>));</span><br><span class="line"></span><br><span class="line"> <span class="keyword">create</span> <span class="keyword">table</span> lectures</span><br><span class="line"> (<span class="keyword">id</span>    <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  title <span class="built_in">varchar</span>(<span class="number">30</span>),</span><br><span class="line">  credits <span class="built_in">int</span>,</span><br><span class="line">  held_by <span class="built_in">int</span>,</span><br><span class="line">  primary <span class="keyword">key</span>(<span class="keyword">id</span>),</span><br><span class="line">  foreign <span class="keyword">key</span> (held_by) <span class="keyword">references</span></span><br><span class="line">  professors(pers-<span class="keyword">id</span>));</span><br><span class="line">```     </span><br><span class="line">- Modification of a Relation Schema/Table Schema:   </span><br><span class="line">```sql</span><br><span class="line">//Adding an attribute(a new column) to an existing relation</span><br><span class="line"><span class="comment">--All tuples in the relation are assigned null as the value for the new attribute</span></span><br><span class="line"><span class="comment">--Constraint not null is only allowed if a default value is specified</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> &lt;relation <span class="keyword">name</span>&gt; <span class="keyword">add</span> &lt;<span class="keyword">column</span> definition&gt;;</span><br><span class="line"></span><br><span class="line">//Deleting an attribute (a column) from an existing relation</span><br><span class="line"><span class="comment">--Command will be declined if integrity constraints would be violated</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> &lt;relation <span class="keyword">name</span>&gt; <span class="keyword">drop</span> &lt;<span class="keyword">column</span> <span class="keyword">name</span>&gt;;</span><br><span class="line"></span><br><span class="line">//Deletion of the schema and instance (that is, data) of a relation</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> &lt;relation <span class="keyword">name</span>&gt;</span><br><span class="line"></span><br><span class="line">//Deletion <span class="keyword">of</span> the <span class="keyword">instance</span> (that <span class="keyword">is</span>, <span class="keyword">data</span>) <span class="keyword">of</span> a relation but <span class="keyword">not</span> its <span class="keyword">schema</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> &lt;relation <span class="keyword">name</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Creation of an Index:</p>
+<ul>
+<li>An index is a persistent data structure that provides accelerated access to the rows of a table based on the values of one or more attributes;</li>
+<li>Goal: Significant improvement of query response time<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">unique</span> <span class="keyword">index</span> room_index <span class="keyword">on</span> professors (room);</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> &lt;<span class="keyword">index</span> <span class="keyword">name</span>&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Creation of Views:</p>
+<ul>
+<li>A ++view++ is a virtual relation that does not exist persistently in the database but can be produced upon request by a particular user, at the time of request;</li>
+<li>Views are regarded as derived relations which are defined by queries:<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--create view &lt;view name&gt; [(&lt;attribute name&gt; [, &lt;attribute name&gt;]*)] as &lt;subquery&gt;</span></span><br><span class="line">creat view major_students as</span><br><span class="line">    <span class="keyword">select</span> * <span class="keyword">from</span> students <span class="keyword">where</span> sem&gt;<span class="number">4</span>;</span><br><span class="line"><span class="comment">--delet views</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">view</span> &lt;<span class="keyword">view</span> <span class="keyword">name</span>&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="SQL-Queries-DML-Commands-Lecture-13"><a href="#SQL-Queries-DML-Commands-Lecture-13" class="headerlink" title="SQL Queries (DML) Commands - Lecture 13"></a>SQL Queries (DML) Commands - Lecture 13</h3><ul>
+<li><p>Basic Structure of SQL Queries:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*A1..An are attributes names(columns), R1..Rn are table names, F is predicate,</span></span><br><span class="line"><span class="comment">query result is always a single table, no duplicate</span></span><br><span class="line"><span class="comment">select =  projection</span></span><br><span class="line"><span class="comment">from = cartesian product</span></span><br><span class="line"><span class="comment">where =  selection</span></span><br><span class="line"><span class="comment">distinct = remove duplicate tuples*/</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> A1, A2,..., An</span><br><span class="line"><span class="keyword">from</span> R1, R2,... Rn</span><br><span class="line"><span class="keyword">where</span> F;</span><br><span class="line"><span class="comment">--More details in Page2, Lecture13</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Basic RA expressions and SQL:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--show all from R</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> R;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Projection A,B from R</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> A, B <span class="keyword">from</span> R;</span><br><span class="line"></span><br><span class="line"><span class="comment">--selection basing on F from R</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> * <span class="keyword">from</span> R <span class="keyword">where</span> F;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Cartesian product of RxS</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> R, S;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Union R u S of the relations R(A1,..An) and S(A1..An)</span></span><br><span class="line"><span class="comment">--This union operation will eliminate duplicates, add "all" after union can keep</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> R <span class="keyword">union</span> <span class="keyword">select</span> * <span class="keyword">from</span> S;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Difference R - S</span></span><br><span class="line"><span class="comment">--Same as above, add "all" after except to keep duplicates</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> R <span class="keyword">except</span> <span class="keyword">select</span> * <span class="keyword">from</span> S;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SQL queries in sigle table:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Search Queries</span></span><br><span class="line"><span class="comment">--where clause - horizontal (row) restriction</span></span><br><span class="line"><span class="comment">--select clause - vertical (column) restriction</span></span><br><span class="line"><span class="keyword">select</span> pers-<span class="keyword">id</span>, <span class="keyword">name</span> <span class="keyword">from</span> professors <span class="keyword">where</span> <span class="keyword">rank</span> = <span class="string">"C4"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Create a students table where the semester number of each student is incremented by 1</span></span><br><span class="line"><span class="keyword">select</span> reg-<span class="keyword">id</span>, <span class="keyword">name</span>, sem+<span class="number">1</span></span><br><span class="line"><span class="keyword">from</span> student;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SQL queries in multiple tables</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Determine the names of professors who hold lectures, and show the titles of the corresponding lectures</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title</span><br><span class="line"><span class="keyword">from</span> professors, lectures</span><br><span class="line"><span class="keyword">where</span> pers-<span class="keyword">id</span> = held_by;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title <span class="keyword">from</span> professors</span><br><span class="line"><span class="keyword">join</span> lectures <span class="keyword">on</span> pers-<span class="keyword">id</span>=held_by;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Determine the names of professors who hold the lecture titled “maieutics”.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title</span><br><span class="line"><span class="keyword">from</span> professors, lectures</span><br><span class="line"><span class="keyword">where</span> pers-<span class="keyword">id</span> = held_by <span class="keyword">and</span></span><br><span class="line">title = ‘maieutics’;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Which students attend which lecture? Output student names and lecture titles. 3 tables nature join</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title</span><br><span class="line"><span class="keyword">from</span> students, attends, lectures</span><br><span class="line"><span class="keyword">where</span> students.reg-<span class="keyword">id</span> = attends.reg-<span class="keyword">id</span> <span class="keyword">and</span></span><br><span class="line">attends.id = lectures.id;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, title</span><br><span class="line"><span class="keyword">from</span> students <span class="keyword">natural</span> <span class="keyword">join</span> attends <span class="keyword">natural</span> <span class="keyword">join</span> lectures</span><br><span class="line"></span><br><span class="line"><span class="comment">--Rename, "as" is optional</span></span><br><span class="line"><span class="keyword">select</span> s.name, l.title</span><br><span class="line"><span class="keyword">from</span> students <span class="keyword">as</span> s, attends <span class="keyword">as</span> a, lectures <span class="keyword">as</span> l</span><br><span class="line"><span class="keyword">where</span> s.reg-<span class="keyword">id</span> = a.reg-<span class="keyword">id</span> <span class="keyword">and</span> a.id = l.id;</span><br><span class="line"></span><br><span class="line"><span class="comment">--List all students together with their performed tests by maintaining</span></span><br><span class="line">the complete student information.</span><br><span class="line"><span class="comment">--left outer join reserves all the tuples of left tables</span></span><br><span class="line"><span class="comment">--Right outer join (right outer join) and full outer join (full outer join) are similar</span></span><br><span class="line"><span class="keyword">select</span> s.*, t.* <span class="comment">--can be written as  select *</span></span><br><span class="line"><span class="keyword">from</span> students s <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="keyword">test</span> t <span class="keyword">on</span> s.reg-<span class="keyword">id</span> = t.reg-<span class="keyword">id</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Set operations:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Determine the names of all university employees, i.e., the names of all professors and all assistants. All duplicates are removed</span></span><br><span class="line"><span class="comment">--add "all" after union to keep duplicates</span></span><br><span class="line">(<span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> assistants)</span><br><span class="line"><span class="keyword">union</span></span><br><span class="line">(<span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> professors);</span><br><span class="line"></span><br><span class="line"><span class="comment">--Find the identifiers of professors who teach “ethics” or “maieutics”.</span></span><br><span class="line">(<span class="keyword">select</span> p.pers-<span class="keyword">id</span> <span class="keyword">from</span> professors p, lectures l</span><br><span class="line"><span class="keyword">where</span> p.pers-<span class="keyword">id</span> = l.held_by <span class="keyword">and</span> l.title = ‘ethics’)</span><br><span class="line"><span class="keyword">union</span></span><br><span class="line">(<span class="keyword">select</span> p.pers-<span class="keyword">id</span> <span class="keyword">from</span> professors p, lectures l</span><br><span class="line"><span class="keyword">where</span> p.pers-<span class="keyword">id</span> = l.held_by <span class="keyword">and</span> l.title = ‘maieutics’);</span><br><span class="line"></span><br><span class="line"><span class="comment">--Find the identifiers of professors who teach “ethics” and “maieutics”.</span></span><br><span class="line">(<span class="keyword">select</span> p.pers-<span class="keyword">id</span> <span class="keyword">from</span> professors p, lectures l</span><br><span class="line"><span class="keyword">where</span> p.pers-<span class="keyword">id</span> = l.held_by <span class="keyword">and</span> l.title = ‘ethics’)</span><br><span class="line"><span class="keyword">intersect</span></span><br><span class="line">(<span class="keyword">select</span> p.pers-<span class="keyword">id</span> <span class="keyword">from</span> professors p, lectures l</span><br><span class="line"><span class="keyword">where</span> p.pers-<span class="keyword">id</span> = l.held_by <span class="keyword">and</span> l.title = ‘maieutics’);</span><br><span class="line"></span><br><span class="line"><span class="comment">--Find the identifiers of professors who teach “ethics” but not “maieutics”.</span></span><br><span class="line">(<span class="keyword">select</span> p.pers-<span class="keyword">id</span> <span class="keyword">from</span> professors p, lectures l</span><br><span class="line"><span class="keyword">where</span> p.pers-<span class="keyword">id</span> = l.held_by <span class="keyword">and</span> l.title = ‘ethics’)</span><br><span class="line"><span class="keyword">except</span></span><br><span class="line">(<span class="keyword">select</span> p.pers-<span class="keyword">id</span> <span class="keyword">from</span> professors p, lectures l</span><br><span class="line"><span class="keyword">where</span> p.pers-<span class="keyword">id</span> = l.held_by <span class="keyword">and</span> l.title = ‘maieutics’);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Operations union, except, and intersect produce tables as sets of tuples,</span></span><br><span class="line"><span class="comment">elimination of duplicates</span></span><br><span class="line"><span class="comment">Operations union all, except all, and intersect all maintain duplicates in</span></span><br><span class="line"><span class="comment">result table</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="SQL-Queries-Commands-Lecture-14"><a href="#SQL-Queries-Commands-Lecture-14" class="headerlink" title="SQL Queries Commands - Lecture 14"></a>SQL Queries Commands - Lecture 14</h3><ul>
+<li>Update of Tuples in a Table</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Syntax: <span class="keyword">update</span> &lt;relation <span class="keyword">name</span>&gt;</span><br><span class="line"><span class="keyword">set</span> &lt;<span class="keyword">attribute</span> <span class="keyword">name</span>&gt; = &lt;expression&gt;</span><br><span class="line">[, &lt;<span class="keyword">attribute</span> <span class="keyword">name</span>&gt; = &lt;expression&gt;]*</span><br><span class="line">[<span class="keyword">where</span> &lt;condition&gt;];</span><br><span class="line"></span><br><span class="line"><span class="comment">--Change room number (currently 232) of professor Russel to 115 update professors set room = 115 where name = ‘Russel’</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--The construct case is used to perform several updates in a single update statement</span></span><br><span class="line"><span class="comment">--Example: Reorganization of the individual assistants’ offices into open-plan offices</span></span><br><span class="line"><span class="keyword">update</span> assistants</span><br><span class="line"><span class="keyword">set</span> room = <span class="keyword">case</span></span><br><span class="line">	<span class="keyword">when</span> room &gt;= <span class="number">100</span> <span class="keyword">and</span> room &lt; <span class="number">120</span> <span class="keyword">then</span> <span class="number">417</span></span><br><span class="line">	<span class="keyword">when</span> room &gt;= <span class="number">120</span> <span class="keyword">and</span> room &lt; <span class="number">140</span> <span class="keyword">then</span> <span class="number">438</span></span><br><span class="line">	<span class="keyword">else</span> <span class="number">455</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Deletion of Tuples in a Table</span></span><br><span class="line"><span class="comment">--Delete students who study longer than 8 semesters</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> students <span class="keyword">where</span> sem &gt; <span class="number">8</span>;</span><br><span class="line"><span class="comment">--Delete all tests tuples</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tests;</span><br><span class="line"><span class="comment">--Lecture “foundations” with the identifier 5001 was suddenly canceled; delete all registrations</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> attends <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">5001</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Aggregate Functions:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Aggregate functions are functions that take a collection (list) of values as</span></span><br><span class="line"><span class="comment">--input and return a single value as output</span></span><br><span class="line"><span class="comment">--5 bult-in: count, avg, sum, max, min;</span></span><br><span class="line"><span class="comment">--Query 4: Calculate the number of different semesters the students are in, and store the result in a new attribute named “diff_sem”.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> sem) <span class="keyword">from</span> students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Grouping<br><em>Page12, Lecture14</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Determine the number of hours per week in which each professor has given lectures.</span></span><br><span class="line"><span class="keyword">select</span> held_by, <span class="keyword">sum</span>(hpw) <span class="keyword">as</span> <span class="built_in">number</span></span><br><span class="line"><span class="keyword">from</span> lectures</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> held_by;</span><br><span class="line"></span><br><span class="line"><span class="comment">--Determine the number of hours per week of those lectures held by</span></span><br><span class="line"><span class="comment">--professors who predominantly give long lectures (&gt; 3 hours per week on average).</span></span><br><span class="line"><span class="keyword">select</span> held_by, <span class="keyword">sum</span>(hpw) <span class="keyword">as</span> <span class="built_in">number</span></span><br><span class="line"><span class="keyword">from</span> lectures</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> held_by</span><br><span class="line"><span class="keyword">having</span> <span class="keyword">avg</span>(hpw) &gt; <span class="number">3</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">General form</span></span><br><span class="line"><span class="comment">select [distinct] &#123;* | &lt;column expression&gt; [as &lt;new column name&gt;] [, …]&#125;</span></span><br><span class="line"><span class="comment">from &lt;table name&gt; [as &lt;variable] [, …]</span></span><br><span class="line"><span class="comment">[where &lt;condition&gt;]</span></span><br><span class="line"><span class="comment">[group by &lt;column list&gt;</span></span><br><span class="line"><span class="comment">having &lt;condition&gt;]]</span></span><br><span class="line"><span class="comment">[order by &lt;column list&gt;];</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">Sequence of processing</span></span><br><span class="line"><span class="comment">select: specifies which attributes are to appear in the output</span></span><br><span class="line"><span class="comment">from: specifies the table or tables to be used</span></span><br><span class="line"><span class="comment">where: filters the tuples subject to some condition</span></span><br><span class="line"><span class="comment">group by: forms groups of tuples with the same grouping attribute value</span></span><br><span class="line"><span class="comment">having: filters the groups subject to some condition</span></span><br><span class="line"><span class="comment">order by: specifies the order of the output</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="SQL-Queries-Commands-Lecture-15"><a href="#SQL-Queries-Commands-Lecture-15" class="headerlink" title="SQL Queries Commands - Lecture 15"></a>SQL Queries Commands - Lecture 15</h3><ul>
+<li><p>Nested Queries</p>
+<ul>
+<li><p>Teset for Set Membership in the WHERE clause</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">key words are "in" and "not in"</span><br><span class="line"><span class="comment">--Query 1: Output the names of students who have taken a test.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> students</span><br><span class="line"><span class="keyword">where</span> reg-<span class="keyword">id</span> <span class="keyword">in</span> (<span class="keyword">select</span> reg-<span class="keyword">id</span> <span class="keyword">from</span> tests);</span><br><span class="line"><span class="comment">--Query 2: Find the names of all professors that are not involved in teaching.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> professors</span><br><span class="line"><span class="keyword">where</span> pers-<span class="keyword">id</span> <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> held_by <span class="keyword">from</span> lectures);</span><br><span class="line"><span class="comment">--Query 3: Select the names of assistants whose names are neither ‘Platon’ nor ‘Newton’.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> assistants</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">not</span> <span class="keyword">in</span> (<span class="string">'Platon'</span>, <span class="string">'Newton'</span>);</span><br><span class="line"><span class="comment">--Query 4: Find the names of all professors who gave a test</span></span><br><span class="line"><span class="comment">--and also taught the lecture that was tested.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> professors</span><br><span class="line"><span class="keyword">where</span> pers-<span class="keyword">id</span> <span class="keyword">in</span> (<span class="keyword">select</span> held_by <span class="keyword">from</span> lectures</span><br><span class="line">      <span class="keyword">where</span> (<span class="keyword">id</span>, held_by) <span class="keyword">in</span> (<span class="keyword">select</span> <span class="keyword">id</span>, pers-<span class="keyword">id</span> <span class="keyword">from</span> tests));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Set Comparisons in the WHERE Clause</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Key words are "some" and "all"</span><br><span class="line"><span class="comment">--Query 5: Find the names of all students whose semester number is greater</span></span><br><span class="line"><span class="comment">--than at least one of the semester numbers of the students ‘Fichte’</span></span><br><span class="line"><span class="comment">--(10th semester) or ‘Carnap’ (3rd semester).</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> students</span><br><span class="line"><span class="keyword">where</span> sem &gt; <span class="keyword">some</span> (<span class="keyword">select</span> sem <span class="keyword">from</span> students</span><br><span class="line">    <span class="keyword">where</span> <span class="keyword">name</span> = ‘Fichte’ <span class="keyword">or</span> <span class="keyword">name</span> = ‘Carnap’);</span><br><span class="line"></span><br><span class="line"><span class="comment">--Find the students with the largest number of semesters.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> students</span><br><span class="line"><span class="keyword">where</span> sem &gt;= all (<span class="keyword">select</span> sem <span class="keyword">from</span> students);</span><br><span class="line"><span class="comment">--Query 7: Find the identifiers of professors who teach the most.</span></span><br><span class="line"><span class="keyword">select</span> held_by</span><br><span class="line"><span class="keyword">from</span> lectures</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> held_by</span><br><span class="line"><span class="keyword">having</span> <span class="keyword">sum</span>(hpw) &gt;= all (<span class="keyword">select</span> <span class="keyword">sum</span>(hpw)</span><br><span class="line">                        <span class="keyword">from</span> lectures</span><br><span class="line">                        <span class="keyword">group</span> <span class="keyword">by</span> held_by);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Test for Empty Tables in the WHERE Clause</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Determine the identifiers of all students who have taken a test.</span></span><br><span class="line"><span class="keyword">select</span> reg-<span class="keyword">id</span></span><br><span class="line"><span class="keyword">from</span> students <span class="keyword">as</span> s</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> *</span><br><span class="line">              <span class="keyword">from</span> tests <span class="keyword">as</span> t</span><br><span class="line">              <span class="keyword">where</span> t.reg-<span class="keyword">id</span> = s.reg-<span class="keyword">id</span>);</span><br><span class="line"><span class="comment">--Output the names of professors who do not hold lectures.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> professors</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">exists</span> (<span class="keyword">select</span> *</span><br><span class="line">                  <span class="keyword">from</span> lectures</span><br><span class="line">                  <span class="keyword">where</span> pers-<span class="keyword">id</span> = held_by);</span><br><span class="line"><span class="comment">--“Table A contains table B” is the same as “not exists(B except A)”</span></span><br><span class="line"><span class="comment">--Output the names of students who attend all lectures offered by professor Curie.</span></span><br><span class="line"><span class="keyword">select</span> s.name</span><br><span class="line"><span class="keyword">from</span> students <span class="keyword">as</span> s</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">exists</span> ((<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> lectures, professors</span><br><span class="line">                  <span class="keyword">where</span> pers-<span class="keyword">id</span> = held_by <span class="keyword">and</span> <span class="keyword">name</span> = ‘Curie’)</span><br><span class="line">                  <span class="keyword">except</span></span><br><span class="line">                  (<span class="keyword">select</span> l.id <span class="keyword">from</span> attends <span class="keyword">as</span> a, lectures <span class="keyword">as</span> l</span><br><span class="line">                  <span class="keyword">where</span> l.id = a.id <span class="keyword">and</span> a.reg-<span class="keyword">id</span> = s.reg-<span class="keyword">id</span>)</span><br><span class="line">                  );</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Test for the Absence of Duplicate Tuples in the WHERE Clause</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--The unique construct returns the value true if the table as the result of the</span></span><br><span class="line"><span class="comment">--argument subquery contains no duplicate tuples</span></span><br><span class="line"><span class="comment">--Determine the names of professors who have at most one assistant working for them.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> professors <span class="keyword">as</span> p</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">unique</span> (<span class="keyword">select</span> a.boss <span class="keyword">from</span> assistants a <span class="keyword">where</span> p.pers-<span class="keyword">id</span> = a.boss);</span><br><span class="line"><span class="comment">--The not unique construct returns the value true if the table as the result of</span></span><br><span class="line"><span class="comment">--the argument subquery contains duplicate tuples</span></span><br><span class="line"><span class="comment">--Determine the names of professors who have at least two assistants working for them.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> professors <span class="keyword">as</span> p</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">unique</span> (<span class="keyword">select</span> a.boss <span class="keyword">from</span> assistants <span class="keyword">where</span> p.pers-<span class="keyword">id</span> = a.boss);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Subqueries in the FROM Clause</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--Output the identifiers of those lectures that are attended by more than 20 students.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">id</span></span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">id</span>, <span class="keyword">count</span>(*) <span class="keyword">as</span> <span class="built_in">number</span> <span class="keyword">from</span> attends <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">id</span>)</span><br><span class="line"><span class="keyword">where</span> <span class="built_in">number</span> &gt; <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The WITH Clause for Defining Temporary Tables</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--A way of defining a temporary table whose definition is available only to the</span></span><br><span class="line"><span class="comment">--query in which the with clause is used</span></span><br><span class="line"><span class="comment">--Output the titles of those lectures that are attended by more than 20 students.</span></span><br><span class="line">with attendance_rate(id, number) as</span><br><span class="line">(<span class="keyword">select</span> <span class="keyword">id</span>, <span class="keyword">count</span>(*)</span><br><span class="line">    <span class="keyword">from</span> attends</span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">id</span>)</span><br><span class="line">    <span class="keyword">select</span> l.title</span><br><span class="line"><span class="keyword">from</span> lectures <span class="keyword">as</span> l, attendance_rate <span class="keyword">as</span> a</span><br><span class="line"><span class="keyword">where</span> l.id = a.id <span class="keyword">and</span> a.number &gt; <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Scalar Subqueries in the WHERE, SELECT, or HAVING Clause</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--A scalar subquery returns a single tuple that consists of a single column and</span></span><br><span class="line"><span class="comment">--a single row and that is interpreted and used as a single value</span></span><br><span class="line"><span class="comment">--Determine the name and semester number of those students with a semester number less than the average.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, sem</span><br><span class="line"><span class="keyword">from</span> students</span><br><span class="line"><span class="keyword">where</span> sem &lt; (<span class="keyword">select</span> <span class="keyword">avg</span>(sem) <span class="keyword">from</span> students);</span><br><span class="line"><span class="comment">--List the name and semester number of all students whose</span></span><br><span class="line"><span class="comment">--semester number is greater than the average semester number,</span></span><br><span class="line"><span class="comment">--and compute by how much their semester number is greater than</span></span><br><span class="line"><span class="comment">--the average.</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, sem, sem – (<span class="keyword">select</span> <span class="keyword">avg</span>(sem) <span class="keyword">from</span> students) <span class="keyword">as</span> semDiff</span><br><span class="line"><span class="keyword">from</span> students</span><br><span class="line"><span class="keyword">where</span> sem &gt; (<span class="keyword">select</span> <span class="keyword">avg</span>(sem) <span class="keyword">from</span> students);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Views-Disadvantages-amp-QBE-Lecture-16"><a href="#Views-Disadvantages-amp-QBE-Lecture-16" class="headerlink" title="Views Disadvantages &amp; QBE - Lecture 16"></a>Views Disadvantages &amp; QBE - Lecture 16</h3><ul>
+<li><p>Views Disadvantages:</p>
+<ul>
+<li>Structure restriction<ul>
+<li>The structure of a view is determined at the time of its creation</li>
+<li>The structure of view will be corresponded to the attributes of base table</li>
+<li>No update if attributes are modified.</li>
+</ul>
+</li>
+<li>Performance<ul>
+<li>View resolution that is complex will take long time</li>
+<li><strong>View Materializtion</strong> as a solution. Store the view result as a temporary table in database.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Autorization Page3 - Page8<br><br></p>
+</li>
+<li>Queries by Example (QBE)<ul>
+<li>Has a two-dimensional Syntax</li>
+<li>Queries are expressed “by example”</li>
+<li>Is based on the <font color="red">domain relational calculus</font>: variables are bound to attribute domains (<strong>domain variables</strong>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Database schema used in examples:</strong><br>customer(++cname++, caddr, account)<br>order(++cname++, ++product++, amount)<br>vender(++vname++, vaddr, ++product++, price)  </p>
+<table>
+<thead>
+<tr>
+<th>customer</th>
+<th>cname</th>
+<th>caddr</th>
+<th>account </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> —</td>
+<td>P.</td>
+<td>P.</td>
+<td>&lt;0    </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Language elements<ul>
+<li>Commands: eg. P.(print), I.(insert), D.(delete), U.(update)</li>
+<li>Example elements, domain variable: _X,  _Meyer</li>
+<li>Constants: Smith, 123</li>
+<li>Boolean (e.g. and, or, not), arithmetic (e.g. +, -, *, /) and relational operators(e.g. =, &lt;, &gt;, &lt;&gt;, &gt;=, &lt;=)</li>
+</ul>
+</li>
+</ul>
+<p>QBE will perform duplicate elimination automatically;<br>Using <strong>all</strong> to suppress duplicate elimination. -&gt; P.ALL.  </p>
+<p><em>Find for each product the name(s) of the cheapest vendor.</em><br>|vender|vname|vaddr|product|price|<br>|:-:|:-:|:-:|:-:|:-:|<br>|null|P._n|null|_W|_p|<br>|非|_m|null|_w|&lt;_p|</p>
+<h3 id="QBE-Lecture-17-Page1-25"><a href="#QBE-Lecture-17-Page1-25" class="headerlink" title="QBE - Lecture 17 - Page1-25"></a>QBE - Lecture 17 - Page1-25</h3><ul>
+<li>Condition Box: contains expression of general constraints with <em>and</em> and <em>or</em></li>
+<li>非符号：用在表头代表『不存在』，用在变量代表『不等于』</li>
+<li>Aggregation: SUM., AVG., MAX., MIN., CNT.<ul>
+<li>Usually follows with “ALL.”, with duplicates</li>
+<li>add “UN” before “ALL.” to remove duplicates.</li>
+</ul>
+</li>
+<li>Grouping: G.</li>
+<li>Ordering: in ascending order: P.AO.; in descending order: P.DO.</li>
+<li>“I”, “U”, “D” for insertion, update, deletion of tuples.</li>
+<li>Creation of Table schemas, Page24</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/review/" rel="tag"># review</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/01/LeetCode-Tree-Problems-Summary/" rel="next" title="LeetCode Tree Problems Summary">
+                <i class="fa fa-chevron-left"></i> LeetCode Tree Problems Summary
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zun Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/UFWestlife" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:uflzun93@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DBMS-Exam2-Review"><span class="nav-number">1.</span> <span class="nav-text">DBMS Exam2 Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Structured-Query-Language-SQL-Lecture-11"><span class="nav-number">1.1.</span> <span class="nav-text">Structured Query Language (SQL) - Lecture 11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structured-Query-Language-SQL-Lecture-12"><span class="nav-number">1.2.</span> <span class="nav-text">Structured Query Language (SQL) - Lecture 12</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-DDL-Commands"><span class="nav-number">1.2.1.</span> <span class="nav-text">SQL DDL Commands</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-Queries-DML-Commands-Lecture-13"><span class="nav-number">1.3.</span> <span class="nav-text">SQL Queries (DML) Commands - Lecture 13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-Queries-Commands-Lecture-14"><span class="nav-number">1.4.</span> <span class="nav-text">SQL Queries Commands - Lecture 14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-Queries-Commands-Lecture-15"><span class="nav-number">1.5.</span> <span class="nav-text">SQL Queries Commands - Lecture 15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Views-Disadvantages-amp-QBE-Lecture-16"><span class="nav-number">1.6.</span> <span class="nav-text">Views Disadvantages &amp; QBE - Lecture 16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QBE-Lecture-17-Page1-25"><span class="nav-number">1.7.</span> <span class="nav-text">QBE - Lecture 17 - Page1-25</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zun Wang</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
