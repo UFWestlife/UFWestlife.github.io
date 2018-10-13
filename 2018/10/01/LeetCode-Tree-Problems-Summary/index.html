@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://yoursite.com/imgs/124.jpg">
 <meta property="og:image" content="http://yoursite.com/imgs/250.jpg">
 <meta property="og:image" content="http://yoursite.com/imgs/366.jpg">
-<meta property="og:updated_time" content="2018-10-03T06:57:32.344Z">
+<meta property="og:updated_time" content="2018-10-13T07:02:00.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Tree Problems Summary">
 <meta name="twitter:description" content="This is a summary of Tree Problems in LeetCode. Including the thought, code and some tricks.  Preorder100. Same Tree  可套用模板，双pre123456public boolean isSameTree(TreeNode p, TreeNode q) &amp;#123;    if(p">
@@ -562,8 +562,8 @@
 </ul>
 <p><em><strong>96. Unique Binary search tree (Important)</strong></em></p>
 <ul>
-<li>DP问题，==死记硬背==，套公式: </li>
-<li><code>F(n) = F(0) * F(n-1) + F(1) * F(n-2) + F(2) * F(n-3) + ... + F(n-2) * F(1) + F(n-1) * F(0)</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//累加求DP[n]</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> level = <span class="number">2</span>; level &lt;=n; level++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> root = <span class="number">1</span>; root&lt;=level; root++)</span><br><span class="line">        dp[level] += dp[level-root]*dp[root-<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<li>DP问题，<mark>死记硬背</mark>，套公式: </li>
+<li><code>F(n) = F(0) * F(n-1) + F(1) * F(n-2) + F(2) * F(n-3) + ... + F(n-2) * F(1) + F(n-1) * F(0)</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//累加求DP[n]</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> level = <span class="number">2</span>; level &lt;= n; level++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> root = <span class="number">1</span>; root &lt;= level; root++)</span><br><span class="line">        dp[level] += dp[level-root]*dp[root-<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><em><strong>156. Binary Tree Upside Down</strong></em></p>
@@ -583,9 +583,6 @@
 <li>隐藏性质，当遇到比peek值大的元素，说明进入了当前树或者当前子树的right subTree，如果再出现比该值小的则说明false，出现更大的就进入下一个右子树或者大树的右半边树</li>
 </ul>
 <p><em><strong>333. Largest BST subtree (Seldom)</strong></em></p>
-<ul>
-<li></li>
-</ul>
 <ol start="222">
 <li>Count Complete Tree Nodes (seldom)</li>
 <li>Construct Binary Tree From 3种order (seldom)</li>
